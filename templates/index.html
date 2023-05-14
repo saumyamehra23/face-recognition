@@ -2,16 +2,79 @@
 <html>
 
 <head>
-    <title>Face Recognition</title>
+    <title>Banking System - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        video {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .login-error {
+            color: red;
+            text-align: center;
+        }
+    </style>
 </head>
 
-
 <body>
-    <h1>Face Recognition</h1>
+    <h1>Login to your account</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="submit" value="Upload">
+        <input type="file" name="file" accept="image/*" required>
+        <input type="text" name="username" placeholder="Username/Login ID" required>
+        <input type="submit" value="Login">
     </form>
+    <p class="login-error">{{ error_message }}</p>
+
+  
 </body>
 
 </html>
